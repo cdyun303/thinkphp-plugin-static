@@ -1,0 +1,30 @@
+{
+  "name": "cdyun/thinkphp-plugin-static",
+  "description": "Thinkphp Framework静态资源",
+  "license": "MIT",
+  "keywords": [
+    "php",
+    "admin",
+    "thinkphp",
+    "cdyun"
+  ],
+  "authors": [
+    {
+      "name": "cdyun",
+      "email": "121625706@qq.com",
+      "role": "Developer"
+    }
+  ],
+  "extra": {
+    "config": {
+      "type": "module",
+      "name": "静态资源",
+      "document": "https://github.com/cdyun303/thinkphp-plugin-static.git",
+      "description": "Thinkphp Framework静态资源。"
+    },
+    "plugin": {
+      "src/admin": "public/static/admin",
+      "src/lib": "public/static/lib"
+    }
+  }
+}
