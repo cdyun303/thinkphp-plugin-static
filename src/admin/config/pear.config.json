@@ -21,7 +21,7 @@
 		"max": "30",
 		"index": {
 			"id": "0",
-			"href": "/app/admin/index/dashboard",
+			"href": "/admin/core/index/dashboard",
 			"title": "仪表盘"
 		}
 	},

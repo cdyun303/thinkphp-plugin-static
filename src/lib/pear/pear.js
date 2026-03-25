@@ -9,6 +9,7 @@ layui.config({
 	base: rootPath + "module/",
 	version: "3.10.0"
 }).extend({
+	responseCode: "responseCode",		// 请求响应code
 	admin: "admin", 	// 框架布局组件
 	menu: "menu",		// 数据菜单组件
 	frame: "frame", 	// 内容页面组件
