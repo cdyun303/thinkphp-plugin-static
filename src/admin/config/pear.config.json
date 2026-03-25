@@ -1,10 +1,10 @@
 {
 	"logo": {
-		"title": "Webman Admin",
+		"title": "Thinkphp Admin",
 		"image": "/static/admin/images/logo.png"
 	},
 	"menu": {
-		"data": "/admin/core/rule/get",
+		"data": "/admin/core/node/get",
 		"method": "GET",
 		"accordion": true,
 		"collapse": false,
@@ -35,27 +35,27 @@
 	"colors": [
 		{
 			"id": "1",
-			"color": "#36b368",
+			"color": "#16b777",
 			"second": "#f0f9eb"
 		},
 		{
 			"id": "2",
-			"color": "#2d8cf0",
+			"color": "#1890ff",
 			"second": "#ecf5ff"
 		},
 		{
 			"id": "3",
-			"color": "#f6ad55",
+			"color": "#faad14",
 			"second": "#fdf6ec"
 		},
 		{
 			"id": "4",
-			"color": "#f56c6c",
+			"color": "#ff4d4f",
 			"second": "#fef0f0"
 		},
 		{
 			"id": "5",
-			"color": "#3963bc",
+			"color": "#646cff",
 			"second": "#ecf5ff"
 		}
 	],

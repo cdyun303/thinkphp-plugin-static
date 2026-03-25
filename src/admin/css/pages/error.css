@@ -33,15 +33,22 @@ body {
 	display: flex;
 	flex-direction: column;
 	position: relative;
-	background-color: white !important;
+	background-color: whitesmoke !important;
 }
 
 .content {
 	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
-	width: 100%;
 	text-align: center;
+	top: 10px;
+	bottom: 10px;
+	left: 10px;
+	right: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 2px;
+	background-color: #fff;
+	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .05);
 }
 
 .content>img {
