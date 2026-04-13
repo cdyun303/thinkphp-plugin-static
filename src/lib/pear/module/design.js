@@ -139,22 +139,21 @@ layui.define(['layer', 'form'], function(exports) {
 						parent.layer.open({
 							type: 2,
 							title: "选择附件",
-							content: "/app/admin/upload/attachment",
+							content: "/admin/core/upload/attachment",
 							area: ["95%", "90%"],
 							success: function (layero, index) {
 								parent.layui.$("#layui-layer" + index).data("callback", function (data) {
-									input.val(data.url).prev().html(layui.util.escape(data.url));
+									input.val(data.url).prev().html(layui.util.escape(data.preview));
 								});
 							}
 						});
 					});
 					layui.upload.render({
 						elem: "#" + key,
-						url: "/app/admin/upload/file",
+						url: "/admin/core/upload/move_upload",
 						accept: "file",
-						field: "__file__",
 						done: function (res) {
-							this.item.prev().val(res.data.url).prev().html(layui.util.escape(res.data.url));
+							this.item.prev().val(res.data.url).prev().html(layui.util.escape(res.data.preview));
 						}
 					});
 				});
@@ -168,11 +167,11 @@ layui.define(['layer', 'form'], function(exports) {
 					'        parent.layer.open({\n' +
 					'          type: 2,\n' +
 					'          title: "选择附件",\n' +
-					'          content: "/app/admin/upload/attachment",\n' +
+					'          content: "/admin/core/upload/attachment",\n' +
 					'          area: ["95%", "90%"],\n' +
 					'          success: function (layero, index) {\n' +
 					'            parent.layui.$("#layui-layer" + index).data("callback", function (data) {\n' +
-					'              input.val(data.url).prev().html(layui.util.escape(data.url));\n' +
+					'              input.val(data.url).prev().html(layui.util.escape(data.preview));\n' +
 					'            });\n' +
 					'          }\n' +
 					'        });\n' +
@@ -180,11 +179,10 @@ layui.define(['layer', 'form'], function(exports) {
 					'    });\n' +
 					'    layui.upload.render({\n' +
 					'       elem: "#' + key + '",\n' +
-					'       url: "/app/admin/upload/file",\n' +
+					'       url: "/admin/core/upload/move_upload",\n' +
 					'       accept: "file",\n' +
-					'       field: "__file__",\n' +
 					'       done: function (res) {\n' +
-					'         this.item.prev().val(res.data.url).prev().html(layui.util.escape(res.data.url));\n' +
+					'         this.item.prev().val(res.data.url).prev().html(layui.util.escape(res.data.preview));\n' +
 					'       }\n' +
 					'    });\n';
 				$('.js-show').text(jscode())
@@ -201,22 +199,21 @@ layui.define(['layer', 'form'], function(exports) {
 						parent.layer.open({
 							type: 2,
 							title: '选择附件',
-							content: '/app/admin/upload/attachment?ext=jpg,jpeg,png,gif,bmp',
+							content: '/admin/core/upload/attachment?ext=jpg,jpeg,png,gif,bmp',
 							area: ["95%", "90%"],
 							success: function (layero, index) {
 								parent.layui.$("#layui-layer" + index).data("callback", function (data) {
-									input.val(data.url).prev().attr("src", data.url);
+									input.val(data.url).prev().attr("src", data.preview);
 								});
 							}
 						});
 					});
 					layui.upload.render({
 						elem: "#" + key,
-						url: "/app/admin/upload/image",
+						url: "/admin/core/upload/move_upload",
 						acceptMime: "image/gif,image/jpeg,image/jpg,image/png",
-						field: "__file__",
 						done: function (res) {
-							this.item.prev().val(res.data.url).prev().attr('src', res.data.url);
+							this.item.prev().val(res.data.url).prev().attr('src', res.data.preview);
 						}
 					});
 				});
@@ -229,22 +226,21 @@ layui.define(['layer', 'form'], function(exports) {
 					'        parent.layer.open({\n' +
 					'          type: 2,\n' +
 					'          title: "选择附件",\n' +
-					'          content: "/app/admin/upload/attachment?ext=jpg,jpeg,png,gif,bmp",\n' +
+					'          content: "/admin/core/upload/attachment?ext=jpg,jpeg,png,gif,bmp",\n' +
 					'          area: ["95%", "90%"],\n' +
 					'          success: function (layero, index) {\n' +
 					'            parent.layui.$("#layui-layer" + index).data("callback", function (data) {\n' +
-					'              input.val(data.url).prev().attr("src", data.url);\n' +
+					'              input.val(data.url).prev().attr("src", data.preview);\n' +
 					'            });\n' +
 					'          }\n' +
 					'        });\n' +
 					'      });\n' +
 					'      layui.upload.render({\n' +
 					'        elem: "#' + key + '",\n' +
-					'        url: "/app/admin/upload/image",\n' +
+					'        url: "/admin/core/upload/move_upload",\n' +
 					'        acceptMime: "image/gif,image/jpeg,image/jpg,image/png",\n' +
-					'        field: "__file__",\n' +
 					'        done: function (res) {\n' +
-					'          this.item.prev().val(res.data.url).prev().attr(\'src\', res.data.url);\n' +
+					'          this.item.prev().val(res.data.url).prev().attr(\'src\', res.data.preview);\n' +
 					'        }\n' +
 					'     });\n' +
 					'   });\n';
@@ -329,10 +325,10 @@ layui.define(['layer', 'form'], function(exports) {
 			'    <div class="layui-input-' + size + '">\n' +
 			'      <span></span>\n' +
 			'      <input type="text" style="display:none" name="'+key+'" value="" />\n' +
-			'      <button type="button" class="pear-btn pear-btn-primary pear-btn-sm" id="'+key+'" permission="app.admin.upload.file">\n' +
+			'      <button type="button" class="pear-btn pear-btn-primary pear-btn-sm" id="'+key+'" permission="admin.core.upload.move_load">\n' +
 			'        <i class="layui-icon layui-icon-upload"></i>'+uploadWords+'\n' +
 			'      </button>\n' +
-			'      <button type="button" class="pear-btn pear-btn-primary pear-btn-sm" id="attachment-choose-'+key+'" permission="app.admin.upload.attachment">\n' +
+			'      <button type="button" class="pear-btn pear-btn-primary pear-btn-sm" id="attachment-choose-'+key+'" permission="admin.core.upload.attachment">\n' +
 			'	     <i class="layui-icon layui-icon-align-left"></i>'+selectWords+'\n' +
 			'      </button>\n' +
 			'    </div>\n' +
@@ -348,10 +344,10 @@ layui.define(['layer', 'form'], function(exports) {
 			'    <div class="layui-input-' + size + '">\n' +
 			'      <img class="img-3" src=""/>\n' +
 			'      <input type="text" style="display:none" name="'+key+'" value="" />\n' +
-			'      <button type="button" class="pear-btn pear-btn-primary pear-btn-sm" id="'+key+'" permission="app.admin.upload.image">\n' +
+			'      <button type="button" class="pear-btn pear-btn-primary pear-btn-sm" id="'+key+'" permission="admin.core.upload.move_upload">\n' +
 			'        <i class="layui-icon layui-icon-upload"></i>'+uploadWords+'\n' +
 		    '      </button>\n' +
-			'      <button type="button" class="pear-btn pear-btn-primary pear-btn-sm" id="attachment-choose-'+key+'" permission="app.admin.upload.attachment">\n' +
+			'      <button type="button" class="pear-btn pear-btn-primary pear-btn-sm" id="attachment-choose-'+key+'" permission="admin.core.upload.attachment">\n' +
 			'	     <i class="layui-icon layui-icon-align-left"></i>'+selectWords+'\n' +
 			'      </button>\n' +
 			'    </div>\n' +
